@@ -53,6 +53,20 @@ body {
   border-radius: 15px;
 }
 
+.remove-btn {
+  padding: 15px;
+  font-weight: bold;
+  background-color: lightgray;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.remove-btn:hover {
+  background-color: rgb(189, 189, 189);
+}
+
 #new-book-dialog {
   background-color: rgb(236, 236, 236);
   border: 1px solid gray;

@@ -38,6 +38,13 @@ function createBookContainter(bookObj) {
     };
     book.appendChild(txt);
   };
+
+
+  const removeBtn = document.createElement('button');
+  removeBtn.innerHTML = 'Remove';
+  removeBtn.className = 'remove-btn';
+  removeBtn.setAttribute('data-id', book.id);
+  book.appendChild(removeBtn);
   return book;
 };
 
