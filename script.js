@@ -4,6 +4,7 @@ const addBtn = document.querySelector('.add-btn');
 const newBookDialog = document.querySelector('#new-book-dialog');
 const submitBtn = document.querySelector('#submit-btn');
 
+
 function Book(title, author, pages, isRead) {
   if(!new.target) {
     throw Error('must use the "new" operator to call the constructor');
@@ -30,17 +31,41 @@ function createBookContainter(bookObj) {
   book.className = 'book';
   book.id = bookObj.id;
   for(prop in bookObj) {
+    if(prop == 'isRead') {
+      const btn = document.createElement('button');
+      btn.className = prop;
+      if(bookObj[prop] == 'Read') {
+        btn.classList.add('yes');
+      } else if(bookObj[prop] == 'Not read') {
+        btn.classList.add('no');
+      };
+      btn.innerHTML = bookObj[prop];
+      book.appendChild(btn);
+
+      btn.addEventListener('click', () => {
+        if(btn.classList.contains('yes')) {
+          btn.classList.replace('yes', 'no');
+          btn.innerHTML = 'Not read';
+        } else if(btn.classList.contains('no')) {
+          btn.classList.replace('no', 'yes');
+          btn.innerHTML = 'Read';
+        };
+      });
+      continue;
+    }
+    else if(prop == 'id') {
+      continue;
+    }
     const txt = document.createElement('div');
     txt.className = prop;
     txt.textContent = bookObj[prop];
-    if(bookObj[prop] === 'Read') {
-      txt.classList.add('is-read');
-    };
     book.appendChild(txt);
   };
 
 
   const removeBtn = document.createElement('button');
+
+
   removeBtn.innerHTML = 'Remove';
   removeBtn.className = 'remove-btn';
   removeBtn.setAttribute('data-id', book.id);
@@ -55,6 +80,10 @@ function createBookContainter(bookObj) {
     const bookToRemove = document.getElementById(removeBtn.getAttribute('data-id'));
     bookshelf.removeChild(bookToRemove);
   });
+
+
+
+
   return book;
 };
 
@@ -76,3 +105,15 @@ submitBtn.addEventListener('click', () => {
   }
   addBookToLibrary(title, author, pages, read);
 });
+
+
+
+function readStatus() {
+  let readBtn = document.querySelector('.isRead');
+  if(readBtn.innerHTML == 'Read') {
+    readBtn.classList.add('yes');
+  };
+  readBtn.classList.add('no');
+
+  
+};
