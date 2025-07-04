@@ -1,6 +1,5 @@
 body {
-  background-color: burlywood
-  ;
+  background-color: burlywood;
 }
 .bookshelf {
   display: grid;
@@ -112,4 +111,31 @@ body {
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
+}
+
+.isRead {
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.yes {
+  background-color: rgb(0, 255, 0, 0.7);
+  transition: background-color 0.15s;
+}
+
+.yes:hover {
+  background-color: rgb(0, 255, 0);
+}
+
+.no {
+  background-color: rgb(255, 0, 0, 0.7);
+  transition: background-color 0.15s;
+}
+
+.no:hover {
+  background-color: rgb(255, 0, 0);
 }
