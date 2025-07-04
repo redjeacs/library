@@ -45,6 +45,16 @@ function createBookContainter(bookObj) {
   removeBtn.className = 'remove-btn';
   removeBtn.setAttribute('data-id', book.id);
   book.appendChild(removeBtn);
+
+
+  removeBtn.addEventListener('click', () => {
+    const bookIndex = myLibrary.findIndex(function(book) {
+      return book.id == removeBtn.getAttribute('data-id');
+    })
+    myLibrary.splice(bookIndex, 1);
+    const bookToRemove = document.getElementById(removeBtn.getAttribute('data-id'));
+    bookshelf.removeChild(bookToRemove);
+  });
   return book;
 };
 
