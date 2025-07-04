@@ -1,5 +1,6 @@
 const myLibrary = [];
 const bookshelf = document.querySelector('.bookshelf');
+const addBtn = document.querySelector('.add-btn');
 
 function Book(title, author, pages, isRead) {
   if(!new.target) {

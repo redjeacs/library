@@ -32,3 +32,23 @@ body {
 .isRead {
   font-size: 15px;
 }
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.add-btn {
+  font-size: 22px;
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.add-btn:hover {
+  border: 2px solid black;
+  border-radius: 15px;
+}
