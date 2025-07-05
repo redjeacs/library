@@ -108,12 +108,3 @@ submitBtn.addEventListener('click', () => {
 
 
 
-function readStatus() {
-  let readBtn = document.querySelector('.isRead');
-  if(readBtn.innerHTML == 'Read') {
-    readBtn.classList.add('yes');
-  };
-  readBtn.classList.add('no');
-
-  
-};
