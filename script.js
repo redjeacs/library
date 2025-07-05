@@ -46,9 +46,15 @@ function createBookContainter(bookObj) {
         if(btn.classList.contains('yes')) {
           btn.classList.replace('yes', 'no');
           btn.innerHTML = 'Not read';
+          const readStatusId = btn.parentNode.id;
+          const readStatusIndex = myLibrary.findIndex(book => book.id == readStatusId);
+          myLibrary[readStatusIndex].isRead = 'Not read';
         } else if(btn.classList.contains('no')) {
           btn.classList.replace('no', 'yes');
           btn.innerHTML = 'Read';
+          const readStatusId = btn.parentNode.id;
+          const readStatusIndex = myLibrary.findIndex(book => book.id == readStatusId);
+          myLibrary[readStatusIndex].isRead = 'Read';
         };
       });
       continue;
