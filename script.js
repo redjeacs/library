@@ -5,15 +5,14 @@ const newBookDialog = document.querySelector('#new-book-dialog');
 const submitBtn = document.querySelector('#submit-btn');
 
 
-function Book(title, author, pages, isRead) {
-  if(!new.target) {
-    throw Error('must use the "new" operator to call the constructor');
-  };
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.isRead = isRead;
-  this.id = crypto.randomUUID();
+class Book {
+  constructor(title, author, pages, isRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.isRead = isRead;
+    this.id = crypto.randomUUID();
+  }
 };
 
 function addBookToLibrary(title, author, pages, isRead) {
