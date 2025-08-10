@@ -12,9 +12,12 @@
   <dialog id="new-book-dialog">
     <h2>Add new book</h1>
     <form action="" method="dialog" id="new-book-form">
-      <input type="text" placeholder="Title" id="title-form">
-      <input type="text" placeholder="Author" id="author-form">
+      <input type="text" placeholder="Title" id="title-form" required>
+      <span class="error-message" id="title-error"></span>
+      <input type="text" placeholder="Author" id="author-form" required>
+      <span class="error-message" id="author-error"></span>
       <input type="number" placeholder="Pages" id="pages-form">
+      <span class="error-message" id="pages-error"></span>
       <label for="isRead-form" id="read-status">
         <p>Have you read it?</p>
         <input type="checkbox" name="isRead" id="isRead-form">

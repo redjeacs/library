@@ -27,7 +27,7 @@ body {
   font-weight: bold;
 }
 
-.pages, 
+.pages,
 .isRead {
   font-size: 15px;
 }
@@ -138,4 +138,14 @@ body {
 
 .no:hover {
   background-color: rgb(255, 0, 0);
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  display: none;
+}
+
+.error-message.active {
+  display: block;
 }
